@@ -8,19 +8,20 @@
 
 ## Status
 ### Done
-    * Tried to keep it simple as possible
-    * Created simple data store (HcDataStore) which saves maximum 60 samples of each type (up / down / unknown) for each service
-    * Added api versioning for case we need improve our api and upgrade to new version
-    * Added api described in 'Implemented API' section
-    * Added unit test coverage of main functionality
+  * Tried to keep it simple as possible
+  * Created simple data store (HcDataStore) which saves maximum 60 samples of each type (up / down / unknown) for each service
+  * Added api versioning for case we need improve our api and upgrade to new version
+  * Added api described in 'Implemented API' section
+  * Added unit test coverage of main functionality
 
 
 ### Things that has been left out and need improvement
-    * Change HcDataStore simple storage to db - to not loose all data after each app restart
-    * Add logs for crontab job, every minute access must be saved to log, will be very helpfull for debugging purposes
-    * Cover more functionality with tests - unit / integration tests
-    * '/scheduled_health_check' api method must be filtered from outside, only for internal usage
-    * Api service separation (instead of 3 request in one api - 3 seoparate apis) for better scalability/performance 
+  * Change HcDataStore simple storage to persistent solution - to not loose all data after each app restart
+  * Add logs for crontab job, every minute access must be saved to log, will be very helpfull for debugging purposes
+  * Cover more functionality with tests - unit / integration tests, especially more tests for get_last_hour_availability method
+  * '/scheduled_health_check' api method must be filtered from outside, only for internal usage
+  * Api service separation (instead of 3 request in one api - 3 seoparate apis) for better scalability/performance
+
 
 ## Getting Started
 
@@ -31,11 +32,12 @@ These instructions will get you a copy of the project up and running on your loc
 * Installed ruby envinronment
 * Linux / macosx for running cronjob
 
-### Installing
-  *  cd hds
-  *  bundle install
+### Installing and running
+  * cd hds
+  * bundle install
   * whenever --update-crontab
   * ruby app.rb
+  * Open in browser locally for testing if evrything running http://localhost:4567/api/v1/health (default port 4567)
 
 ## Running the tests
 
