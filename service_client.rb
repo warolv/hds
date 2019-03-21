@@ -6,7 +6,8 @@ class ServiceClient
   def self.get_status(url, type = 'json')
     begin
 			response = RestClient.get(url)
-			if response.code == 200
+			
+      if response.code == 200
 				if type == 'json'
 				  ['good','ok'].include?(JSON.parse(response)['status']['overall'].to_s.downcase) ? 'up' : 'down'
 				else # xml
@@ -20,3 +21,4 @@ class ServiceClient
 		end
   end
 end
+
