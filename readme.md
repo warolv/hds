@@ -8,7 +8,7 @@
 
 ## Status
 ### Done
-  * Tried to keep it simple as possible
+  * Tried to keep it simple as possible - main focus was to build simple and functional application which cover main functionality with test
   * Created simple data store (HcDataStore) which saves maximum 60 samples of each type (up / down / unknown) for each service
   * Added api versioning for case we need improve our api and upgrade to new version
   * Added api described in 'Implemented API' section
@@ -20,8 +20,8 @@
   * Add logs for crontab job, every minute access must be saved to log, will be very helpfull for debugging purposes
   * Cover more functionality with tests - unit / integration tests, especially more tests for get_last_hour_availability method
   * '/scheduled_health_check' api method must be filtered from outside, only for internal usage
-  * Api service separation (instead of 3 request in one api - 3 seoparate apis) for better scalability/performance
-
+  * Api service separation (instead of 3 request in one api - 3 separate apis) for better scalability/performance
+  * Better handling of application response codes, for instance if returned timeout - maybe we need reinitiate request again to take sample and avoid 'unknown' type of sample, use retry handler with delay of 5/10 seconds for example
 
 ## Getting Started
 
@@ -38,6 +38,7 @@ These instructions will get you a copy of the project up and running on your loc
   * whenever --update-crontab
   * ruby app.rb
   * Open in browser locally for testing if evrything running http://localhost:4567/api/v1/health (default port 4567)
+  * To get correct results from http://localhost:4567/api/v1/availability method application must run an least 1 hour
 
 ## Running the tests
 
