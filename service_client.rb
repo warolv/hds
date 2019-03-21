@@ -15,7 +15,7 @@ class ServiceClient
       else
         'unknown'
 			end
-		rescue # in case of timeout or some unexpected problem with the service
+		rescue # in case of timeout or some unexpected problem with service
       'unknown'
 		end
   end
