@@ -39,7 +39,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+rspec spec/hds_spec.rb
 
 ## In case of troubles with cron jobs
   1. Stop/Clear crontab using whenever -c or crontab -r
