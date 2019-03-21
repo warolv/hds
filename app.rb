@@ -10,6 +10,10 @@ configure do
   set :hc_data_store, HcDataStore.new(settings.json_services+settings.xml_services)
 end
 
+get '/' do
+  erb :demo
+end
+
 namespace '/api/v1' do
   before do
     content_type 'application/json'

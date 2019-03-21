@@ -1,5 +1,8 @@
 # Health Dashboard Service
 
+## Production Demo
+  * You can see production demo on http://hds.warolv.net:4567
+
 ## Implemented API
   * /api/v1/health                   Get health statuses of all services
   * /api/v1/availability             Get services availability (in percentage) span over the last hour, 1m interval 
@@ -17,7 +20,7 @@
 
 ### Things that has been left out and need improvement
   * Change HcDataStore simple storage to persistent solution - to not loose all data after each app restart
-  * Add logs for crontab job, every minute access must be saved to log, will be very helpfull for debugging purposes
+  * Add logs for crontab job, every minute ac cess must be saved to log, will be very helpfull for debugging purposes
   * Cover more functionality with tests - unit / integration tests, especially more tests for get_last_hour_availability method
   * '/scheduled_health_check' api method must be filtered from outside, only for internal usage
   * Api service separation (instead of 3 request in one api - 3 separate apis) for better scalability/performance
