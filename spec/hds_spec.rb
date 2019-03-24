@@ -20,7 +20,7 @@ describe "Health Dashboard Service" do
     end
 
     it "should return up status if overall status OK" do
-      expected_body = {:status => {:overall => 'GOOD'}}
+      expected_body = {:status => {:overall => 'OK'}}
       stub_request(:get, first_service_url).
          to_return(status: 200, body: expected_body.to_json, headers: {})
 
